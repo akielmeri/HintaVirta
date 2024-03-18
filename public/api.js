@@ -10,7 +10,7 @@ const createApiTimeInterval = (date = new Date()) => {
 
   const year = date.getFullYear();
   const month = pad(date.getMonth() + 1);
-  const startDay = pad(date.getDate() - 2);
+  const startDay = pad(date.getDate() - 3);
   const endDay = pad(date.getDate() + 1);
   const hours = pad(date.getHours());
 
@@ -65,13 +65,15 @@ const parseAndStorePriceData = (xmlData) => {
       hourOffSet++; // Kasvatetaan tuntia seuraavaa hintapistettä varten
     }
   }
-
+console.log("priceData: ", priceData);
   return priceData;
 };
 
 // Suorittaa API-kutsun hakeakseen sähkön hintatiedot kolmelta päivältä.
 export const fetchData = async () => {
   const { startPeriod, endPeriod } = createApiTimeInterval();
+  console.log("startPeriod: ", startPeriod);
+  console.log("endPeriod: ", endPeriod);
 
   const proxyEndpoint = `/api/data?${new URLSearchParams({
     startPeriod: startPeriod,
