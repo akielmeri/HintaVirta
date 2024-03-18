@@ -1,0 +1,169 @@
+.hidden {
+  display: none;
+}
+
+
+#infoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.infoItem {
+  flex-basis: calc(25% - 1rem);
+  flex-grow: 1;
+  padding: 0.5rem 0;
+  border: var(--element-border);
+  border-radius: 10px;
+
+  background-color: var(--table-header-color);
+
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.infoValue {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  border-top: var(--element-border);
+}
+
+#dateSelection {
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 70%;
+}
+
+#dateSelection button {
+  flex-basis: calc(33% - 2rem);
+  flex-grow: 1;
+}
+
+#priceTable {
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 70%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: var(--element-border);
+  display: none;
+  background-color: var(--table-header-color);
+  font-size: calc(80% + 0.8vmin);
+}
+
+#priceTable table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#priceTable table tr {
+  padding: 0.5rem;
+}
+
+#priceTable table th {
+  border-bottom: var(--element-border);
+  padding: 0.5rem;
+}
+
+#priceTable table td {
+  border-bottom: var(--element-border);
+  padding: 5px;
+}
+
+#priceTable table th:not(:first-child),
+#priceTable table td:not(:first-child) {
+  border-left: var(--element-border);
+}
+
+#priceTable table tr:last-child td {
+  border-bottom: none;
+}
+
+#priceChart {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+#priceCanvas {
+  background-color: var(--table-header-color);
+  border: var(--element-border);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#notificationArea {
+  padding: 10px 0;
+  width: 70%;
+  margin: 20px auto;
+  background-color: var(--alert-color);
+  color: white;
+  text-align: center;
+  display: none;
+}
+
+.price-low {
+  color: #2d844a;
+}
+
+.price-moderate {
+  color: #dd7a00;
+}
+
+.price-high {
+  color: #ba0517;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.005);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-effect {
+  animation: pulse 0.4s forwards;
+}
+
+@media (max-width: 1200px) {
+  .content-container {
+    padding: 2rem;
+  }
+
+  #infoGrid .infoItem {
+    flex-basis: calc(50% - 1rem);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .content-container {
+    padding: 2rem;
+  }
+  #infoGrid .infoItem {
+    flex-basis: calc(50% - 1rem);
+    margin: 0.5rem 0;
+  }
+  #priceTable,
+  #dateSelection,
+  #infoGrid,
+  #banner,
+  #aboutText {
+    width: 100%;
+  }
+}

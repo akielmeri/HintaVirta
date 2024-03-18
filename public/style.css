@@ -1,0 +1,101 @@
+:root {
+  --primary-color: #007bff;
+  --hover-color: #0056b3;
+  --secondary-color: #6c757d;
+  --background-color: #cbdcf6;
+  --text-color: #212529;
+  --table-header-color: #f0f4fa;
+  --table-cell-color: #f8f9fa;
+  --menu-bar-color: #343a40;
+  --button-color: #007bff;
+  --button-hover-color: #0056b3;
+  --alert-color: #f44336;
+  --element-border: 2px solid var(--secondary-color);
+}
+
+html {
+  font-size: calc(80% + 0.8vmin);
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 3rem;
+}
+#banner {
+
+  padding-top: 0.5rem;
+  padding-right: 2rem;
+  width: 70%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center; 
+
+}
+.bannerItem {
+
+  align-items: center;
+}
+
+.logo {
+  height: 5rem;
+  width: auto;
+}
+h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  font-variant: small-caps;
+  color: #04293a;
+}
+
+#aboutText{
+  width: 90%;
+  margin-bottom: 1.5rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: var(--background-color);
+}
+
+#menuBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: var(--menu-bar-color);
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+#menuBar a {
+  color: white;
+  text-decoration: none;
+}
+
+#menuBar a:hover {
+  text-decoration: underline;
+}
+
+button {
+
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: var(--button-color);
+  border: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+button.selected {
+  background-color: var(--button-hover-color);
+}
+

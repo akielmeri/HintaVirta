@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HintaVirta</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <nav id="menuBar">
+      <a href="index.html">Etusivu</a>
+      <a href="settings.html">Asetukset</a>
+      <a href="about.html">Tietoja</a>
+    </nav>
+    <div class="content-container hidden">
+      <div id="banner">
+        <div class="bannerItem"><img src="/images/favicon.png" alt="" class="logo" /></div>
+        <div class="bannerItem"><h1>HintaVirta</h1></div>
+      </div>
+      <div id="aboutText">
+        <h4>Tervetuloa HintaVirtaan - palveluun, joka tuo pörssisähkön hinnat suoraan näytöllesi!</h4>
+        <p>
+          HintaVirrasta tarkistat päivän hinnat helposti ja nopeasti! Tärkeimmät hintatiedot ovat heti sivun alussa, ja valitun päivän kaikki
+          hintatiedot esitetään alempana taulukkona ja kuvaajana.
+        </p>
+        <p>
+          Asetusvalikossa voit asettaa henkilökohtaiset kipurajasi sähkön hinnoille. Kun hinta ylittää tai alittaa asettamasi rajat, hinnan esitysväri
+          muuttuu. Näin näet yhdellä silmäyksellä, onko energian kulutus juuri nyt edullista vai ei.
+        </p>
+      </div>
+      <div id="infoGrid">
+        <div class="infoItem">
+          <label>Nykyinen hinta</label>
+          <div id="currentPrice" class="infoValue"></div>
+        </div>
+        <div class="infoItem">
+          <label>Keskihinta</label>
+          <div id="averagePrice" class="infoValue"></div>
+        </div>
+        <div class="infoItem">
+          <label>Halvinta klo <span id="lowestPriceLabel"></span></label>
+          <div id="lowestPrice" class="infoValue"></div>
+        </div>
+        <div class="infoItem">
+          <label>Kalleinta klo <span id="highestPriceLabel"></span></label>
+          <div id="highestPrice" class="infoValue"></div>
+        </div>
+      </div>
+      <div id="dateSelection">
+        <button id="yesterday">Eilen</button>
+        <button id="today" class="selected">Tänään</button>
+        <button id="tomorrow">Huomenna</button>
+      </div>
+      <div id="priceTable">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">Päivämäärä</th>
+            </tr>
+            <tr>
+              <th>Päivämäärä</th>
+              <th>Hinta (c/kWh)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--  javascriptillä tähän-->
+          </tbody>
+        </table>
+      </div>
+      <div id="notificationArea" style="display: none"></div>
+      <div id="priceChart">
+        <canvas id="priceCanvas"></canvas>
+
+      </div>
+      <script type="module" src="/api.js"></script>
+      <script type="module" src="/main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </div>
+  </body>
+</html>

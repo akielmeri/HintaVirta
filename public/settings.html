@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HintaVirta</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/settings.css">
+</head>
+<body>
+    <nav id="menuBar">
+        <a href="index.html">Etusivu</a>
+      <a href="settings.html">Asetukset</a>
+      <a href="about.html">Tietoja</a>
+    </nav>
+    <div class="content-container">
+        <div id="banner">
+            <div class="bannerItem"><img src="/images/favicon.png" alt="" class="logo"></div>
+            <div class="bannerItem"><h1>HintaVirta</h1></div>
+            
+          </div>
+          <div id="aboutText">
+            <p>Voit asettaa kalliille ja kohtuulliselle hinnalle valitsemasi rajat. Nämä vaikuttavat hintatietojen tekstin väriin.
+            Kallis hinta näkyy punaisella, kohtuullinen oranssilla ja edullinen vihreällä.</p>
+            </p>
+            <p>Voit myös valita, näytetäänkö hinta veron kanssa vai ilman.</p>
+          </div>
+
+        <div id="settingsGrid">
+            <div class="setting-item">
+                <label for="expensivePriceThreshold">Kalliin hinnan raja</label>
+                <input type="number" id="expensivePriceThreshold" value="20">
+            </div>
+            <div class="setting-item">
+                <label for="moderatePriceThreshold">Kohtuullisen hinnan raja</label>
+                <input type="number" id="moderatePriceThreshold" value="10">
+            </div>
+            <div class="setting-item">
+                <label for="includeTax">Näytä verollinen hinta (24%)</label>
+                <input type="checkbox" id="includeTax" checked>
+            </div>
+        </div>
+        <div id="settingsButtons">
+            <button id="save">Tallenna</button>
+            <button id="cancel">Peruuta</button>
+        </div>
+        <div id="confirmMessageArea" style="display: none;"></div>
+    </div>
+    <script type="module" src="/settings.js"></script>
+</body>
+</html>
